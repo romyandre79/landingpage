@@ -6,6 +6,16 @@ let defaultLocale = 'en'
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+
+  // Explicitly ignore static files and API routes handled correctly by Next.js
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.includes('.') ||
+    pathname.startsWith('/api')
+  ) {
+    return
+  }
+
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )
@@ -20,8 +30,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next), static files, and api routes
-    '/((?!_next|api|og-image.png|favicon.ico|robots.txt|sitemap.xml).*)',
-  ],
+  // Matcher ignoring `/_next/` and `/api/` at the edge level router config
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
