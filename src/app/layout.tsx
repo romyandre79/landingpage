@@ -8,6 +8,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://skylineai.example.com"),
   title: "SkylineAI - Flow with the Future | Open-Source Automation",
   description: "SkylineAI is the fair-code automation platform for modern engineers. Design powerful AI workflows node-by-node. Self-host or scale in the cloud.",
   keywords: ["automation", "workflow", "ai", "open-source", "n8n", "low-code", "developer tools"],
@@ -45,8 +46,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SkylineAI",
+    "operatingSystem": "Web, Windows, Linux, macOS",
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "The open-source automation platform for modern engineers.",
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${outfit.variable} antialiased font-sans`}
       >
