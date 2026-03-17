@@ -4,48 +4,47 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-500/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-purple-500/10 blur-[100px] rounded-full" />
-      </div>
-
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white dark:bg-brand-black">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05]" 
+           style={{ backgroundImage: 'radial-gradient(#101330 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
+      
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 mb-8 dark:bg-indigo-500/10 dark:border-indigo-500/20">
-            <span className="flex w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
-            <span className="text-xs font-semibold text-indigo-600 tracking-wide uppercase">New Version 2.0 is live</span>
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-zinc-50 border border-zinc-100 mb-10 dark:bg-zinc-900/50 dark:border-zinc-800">
+            <span className="flex w-2 h-2 rounded-full bg-primary" />
+            <span className="text-xs font-bold text-brand-black tracking-wide uppercase dark:text-zinc-300">New: Multi-node Workflow Engine</span>
           </div>
           
-          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 mb-6 dark:text-white">
-            Scale your business with <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Intelligent AI</span>
+          <h1 className="text-5xl lg:text-[84px] font-extrabold tracking-tight text-brand-black mb-8 leading-[1.1] dark:text-white">
+            Automate without <br className="hidden md:block" />
+            <span className="text-primary font-black">limits</span>
           </h1>
           
-          <p className="text-lg lg:text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl mx-auto dark:text-zinc-400">
-            Automate your workflow, gain deep insights, and reach more customers with SkylineAI. The all-in-one platform built for modern enterprises.
+          <p className="text-xl lg:text-2xl text-zinc-600 mb-12 leading-relaxed max-w-3xl mx-auto dark:text-zinc-400">
+            Design powerful AI workflows in minutes. SkylineAI combines the flexibility of code with the speed of low-code.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               href="#get-started"
-              className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-[#d43d63] transition-all shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] text-lg"
             >
-              Start Your Free Trial
+              Get started for free
             </Link>
             <Link
               href="#demo"
-              className="w-full sm:w-auto px-8 py-4 bg-white text-zinc-900 font-bold rounded-2xl border border-zinc-200 hover:bg-zinc-50 transition-all dark:bg-zinc-900 dark:text-white dark:border-zinc-800 dark:hover:bg-zinc-800"
+              className="w-full sm:w-auto px-10 py-4 bg-white text-secondary font-bold rounded-full border-2 border-secondary hover:bg-secondary hover:text-white transition-all dark:bg-transparent dark:text-zinc-300 dark:border-zinc-700 dark:hover:border-primary dark:hover:text-primary text-lg"
             >
-              Watch Demo
+              Book a demo
             </Link>
           </div>
 
-          <div className="mt-16 pt-16 border-t border-zinc-100 dark:border-zinc-800">
-            <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-8">Trusted by industry leaders</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-50 grayscale">
-              {['TechCorp', 'Stellar', 'NexGen', 'Quantum', 'Cloudly'].map((brand) => (
-                <span key={brand} className="text-xl font-bold text-zinc-900 dark:text-white">{brand}</span>
+          <div className="mt-24 pt-16 border-t border-zinc-100 dark:border-zinc-800">
+            <p className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] mb-10">Powering workflows at</p>
+            <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale contrast-125">
+              {['Discord', 'Zapier', 'PostHog', 'Retool', 'Vercel'].map((brand) => (
+                <span key={brand} className="text-2xl font-black text-brand-black dark:text-white tracking-tight">{brand}</span>
               ))}
             </div>
           </div>

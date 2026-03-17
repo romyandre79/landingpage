@@ -9,14 +9,14 @@ describe('Navbar Component', () => {
 
   it('renders navigation links', () => {
     render(<Navbar />);
-    expect(screen.getByText(/Features/i)).toBeInTheDocument();
+    expect(screen.getByText(/Platform/i)).toBeInTheDocument();
     expect(screen.getByText(/Pricing/i)).toBeInTheDocument();
-    expect(screen.getByText(/About/i)).toBeInTheDocument();
+    expect(screen.getByText(/Docs/i)).toBeInTheDocument();
   });
 
   it('renders the Get Started button', () => {
     render(<Navbar />);
-    const getStartedButton = screen.getByText(/Get Started/i);
+    const getStartedButton = screen.getByText(/Sign up free/i);
     expect(getStartedButton).toBeInTheDocument();
   });
 });
