@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
 });
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'id' }]
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://skylineai.example.com"),
@@ -41,11 +45,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -61,7 +69,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -69,7 +77,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} antialiased font-sans`}
+        className={`${outfit.variable} antialiased font-sans bg-black text-white`}
       >
         {children}
       </body>

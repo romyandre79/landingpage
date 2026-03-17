@@ -1,0 +1,69 @@
+{
+  "navbar": {
+    "platform": "Platform",
+    "pricing": "Harga",
+    "docs": "Dokumentasi",
+    "login": "Masuk",
+    "signup": "Daftar gratis"
+  },
+  "hero": {
+    "badge": "Baru: Mesin Alur Kerja Multi-node",
+    "title": "Otomatisasi tanpa batas",
+    "highlight": "batas",
+    "description": "Rancang alur kerja AI yang kuat dalam hitungan menit. SkylineAI menggabungkan fleksibilitas kode dengan kecepatan low-code.",
+    "cta_primary": "Mulai gratis",
+    "cta_secondary": "Pesan demo",
+    "trusted_by": "Mendukung alur kerja di"
+  },
+  "features": {
+    "tagline": "Fleksibilitas Tak Tertandingi",
+    "title": "Platform terbuka untuk otomatisasi bertenaga AI",
+    "items": [
+      {
+        "title": "Self-host atau Cloud",
+        "description": "Simpan data Anda di lokasi atau skalakan secara instan di infrastruktur terkelola kami."
+      },
+      {
+        "title": "Bangun Node-per-Node",
+        "description": "Desainer alur kerja visual yang membuat logika kompleks menjadi mudah diimplementasikan."
+      },
+      {
+        "title": "Dapat Diperluas dengan Kode",
+        "description": "Tulis skrip JavaScript atau Python kustom langsung di dalam alur kerja Anda."
+      }
+    ]
+  },
+  "pricing": {
+    "tagline": "Harga Sederhana",
+    "title": "Bayar sesuai penggunaan",
+    "recommended": "Direkomendasikan",
+    "per_month": "/bln",
+    "tiers": {
+      "community": {
+        "name": "Komunitas",
+        "description": "Fair-code dan gratis untuk penggunaan pribadi.",
+        "button": "Unduh Sekarang"
+      },
+      "desktop": {
+        "name": "Desktop",
+        "description": "Otomatisasi di mesin lokal Anda.",
+        "button": "Mulai Uji Coba Desktop"
+      },
+      "cloud": {
+        "name": "Cloud",
+        "description": "Skalakan otomatisasi Anda di cloud.",
+        "button": "Pilih Cloud"
+      }
+    }
+  },
+  "footer": {
+    "description": "Rancang alur kerja AI yang kuat. SkylineAI adalah platform otomatisasi fair-code untuk insinyur modern.",
+    "platform": "Platform",
+    "developer": "Pengembang",
+    "connect": "Hubungkan",
+    "rights": "Hak cipta dilindungi undang-undang.",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat Layanan",
+    "cookies": "Kebijakan Cookie"
+  }
+}
