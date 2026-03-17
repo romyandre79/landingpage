@@ -1,40 +1,42 @@
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-export default function Footer() {
+export default function Footer({ dict }: { dict: any }) {
   const currentYear = new Date().getFullYear();
+  const { lang } = useParams();
   
   return (
-    <footer className="bg-white border-t border-zinc-50 pt-20 pb-12 dark:bg-brand-black dark:border-zinc-900">
+    <footer className="bg-black border-t border-zinc-900 pt-20 pb-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-8 group">
+            <Link href={`/${lang}`} className="flex items-center space-x-2 mb-8 group">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">n</span>
               </div>
-              <span className="text-lg font-bold tracking-tight text-brand-black dark:text-white">
+              <span className="text-lg font-bold tracking-tight text-white">
                 Skyline<span className="text-primary">AI</span>
               </span>
             </Link>
-            <p className="text-zinc-500 dark:text-zinc-400 text-[15px] font-medium leading-relaxed">
-              Design powerful AI workflows. SkylineAI is the fair-code automation platform for modern engineers.
+            <p className="text-zinc-500 text-[15px] font-medium leading-relaxed">
+              {dict.footer.description}
             </p>
           </div>
           
           <nav>
-            <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Platform</h5>
-            <ul className="space-y-5 text-[15px] font-medium text-zinc-500 dark:text-zinc-400">
-              <li><Link href="#features" className="hover:text-primary transition-colors">Features</Link></li>
-              <li><Link href="#pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.platform}</h5>
+            <ul className="space-y-5 text-[15px] font-medium text-zinc-500">
+              <li><Link href="#features" className="hover:text-primary transition-colors">{dict.navbar.platform}</Link></li>
+              <li><Link href="#pricing" className="hover:text-primary transition-colors">{dict.navbar.pricing}</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Integrations</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Templates</Link></li>
             </ul>
           </nav>
           
           <nav>
-            <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Developer</h5>
-            <ul className="space-y-5 text-[15px] font-medium text-zinc-500 dark:text-zinc-400">
-              <li><Link href="#" className="hover:text-primary transition-colors">Documentation</Link></li>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.developer}</h5>
+            <ul className="space-y-5 text-[15px] font-medium text-zinc-500">
+              <li><Link href="#" className="hover:text-primary transition-colors">{dict.navbar.docs}</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Self-hosting</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Node Creator</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">GitHub</Link></li>
@@ -42,7 +44,7 @@ export default function Footer() {
           </nav>
           
           <div role="contentinfo" aria-label="Social media links">
-            <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Connect</h5>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.connect}</h5>
             <div className="flex space-x-5">
               <Link href="#" className="text-zinc-400 hover:text-primary transition-colors">
                 <span className="sr-only">Twitter</span>
@@ -56,14 +58,14 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-10 border-t border-zinc-50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 dark:border-zinc-900">
-          <p className="text-zinc-500 text-sm font-medium dark:text-zinc-500">
-            &copy; {currentYear} SkylineAI. All rights reserved.
+        <div className="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-zinc-500 text-sm font-medium">
+            &copy; {currentYear} SkylineAI. {dict.footer.rights}
           </p>
-          <div className="flex space-x-10 text-sm font-medium text-zinc-500 dark:text-zinc-500">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Cookie Policy</Link>
+          <div className="flex space-x-10 text-sm font-medium text-zinc-500">
+            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.privacy}</Link>
+            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.terms}</Link>
+            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.cookies}</Link>
           </div>
         </div>
       </div>
