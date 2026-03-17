@@ -50,7 +50,7 @@ export default function Pricing() {
                 </div>
               )}
               <div className="mb-10">
-                <h4 className="text-2xl font-black text-brand-black dark:text-white mb-3">{tier.name}</h4>
+                <h3 className="text-2xl font-black text-brand-black dark:text-white mb-3">{tier.name}</h3>
                 <p className="text-zinc-500 dark:text-zinc-400 text-[15px] font-medium leading-relaxed mb-8">{tier.description}</p>
                 <div className="flex items-baseline space-x-1">
                   <span className="text-5xl font-black text-brand-black dark:text-white tracking-tight">${tier.price}</span>

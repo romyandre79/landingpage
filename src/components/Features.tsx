@@ -46,7 +46,7 @@ export default function Features() {
               <div className="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all dark:bg-zinc-800">
                 {feature.icon}
               </div>
-              <h4 className="text-2xl font-bold text-brand-black mb-4 dark:text-white">{feature.title}</h4>
+              <h3 className="text-2xl font-bold text-brand-black mb-4 dark:text-white">{feature.title}</h3>
               <p className="text-zinc-600 leading-relaxed text-[17px] dark:text-zinc-400 font-medium">{feature.description}</p>
             </div>
           ))}

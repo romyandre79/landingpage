@@ -42,7 +42,10 @@ export default function Hero() {
 
           <div className="mt-24 pt-16 border-t border-zinc-100 dark:border-zinc-800">
             <p className="text-xs font-bold text-zinc-400 uppercase tracking-[0.2em] mb-10">Powering workflows at</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale contrast-125">
+            <div 
+              className="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale contrast-125"
+              aria-label="Companies using SkylineAI"
+            >
               {['Discord', 'Zapier', 'PostHog', 'Retool', 'Vercel'].map((brand) => (
                 <span key={brand} className="text-2xl font-black text-brand-black dark:text-white tracking-tight">{brand}</span>
               ))}

@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
           </div>
           
-          <div>
+          <nav>
             <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Platform</h5>
             <ul className="space-y-5 text-[15px] font-medium text-zinc-500 dark:text-zinc-400">
               <li><Link href="#features" className="hover:text-primary transition-colors">Features</Link></li>
@@ -29,9 +29,9 @@ export default function Footer() {
               <li><Link href="#" className="hover:text-primary transition-colors">Integrations</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Templates</Link></li>
             </ul>
-          </div>
+          </nav>
           
-          <div>
+          <nav>
             <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Developer</h5>
             <ul className="space-y-5 text-[15px] font-medium text-zinc-500 dark:text-zinc-400">
               <li><Link href="#" className="hover:text-primary transition-colors">Documentation</Link></li>
@@ -39,9 +39,9 @@ export default function Footer() {
               <li><Link href="#" className="hover:text-primary transition-colors">Node Creator</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">GitHub</Link></li>
             </ul>
-          </div>
+          </nav>
           
-          <div>
+          <div role="contentinfo" aria-label="Social media links">
             <h5 className="font-bold text-brand-black dark:text-white mb-8 text-sm uppercase tracking-widest">Connect</h5>
             <div className="flex space-x-5">
               <Link href="#" className="text-zinc-400 hover:text-primary transition-colors">
