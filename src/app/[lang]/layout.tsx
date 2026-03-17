@@ -69,7 +69,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={lang} className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

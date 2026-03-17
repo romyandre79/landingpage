@@ -1,9 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Footer({ dict }: { dict: any }) {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
   const { lang } = useParams();
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
   
   return (
     <footer className="bg-black border-t border-zinc-900 pt-20 pb-12">
@@ -60,7 +67,7 @@ export default function Footer({ dict }: { dict: any }) {
         
         <div className="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-zinc-500 text-sm font-medium">
-            &copy; {currentYear} SkylineAI. {dict.footer.rights}
+            &copy; {currentYear || '2026'} SkylineAI. {dict.footer.rights}
           </p>
           <div className="flex space-x-10 text-sm font-medium text-zinc-500">
             <Link href="#" className="hover:text-primary transition-colors">{dict.footer.privacy}</Link>
