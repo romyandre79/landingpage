@@ -40,9 +40,9 @@ export default function Pricing() {
               key={idx}
               className={`relative p-10 rounded-[40px] border-2 ${
                 tier.highlight
-                  ? "border-primary shadow-2xl shadow-primary/5"
-                  : "border-zinc-100 dark:border-zinc-800"
-              } flex flex-col h-full bg-white dark:bg-zinc-900 transition-all hover:translate-y-[-8px]`}
+                  ? "border-primary shadow-2xl shadow-primary/5 bg-white/80 dark:bg-zinc-900/80"
+                  : "border-zinc-100/80 dark:border-zinc-800/80 bg-white/50 dark:bg-zinc-900/50"
+              } backdrop-blur-md flex flex-col h-full transition-all hover:translate-y-[-8px]`}
             >
               {tier.highlight && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em]">
