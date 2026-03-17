@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Hero({ dict }: { dict: any }) {
+export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-black">
       {/* Background Polish */}
@@ -20,28 +20,28 @@ export default function Hero({ dict }: { dict: any }) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span>{dict.hero.badge}</span>
+            <span>New: Multi-node Workflow Engine</span>
           </div>
           
           <h1 className="text-6xl lg:text-8xl font-black text-white mb-10 tracking-tight leading-[0.9]">
-            {dict.hero.title} <span className="text-primary italic font-serif lowercase pr-4">{dict.hero.highlight}</span>
+            Automate without boundaries <span className="text-primary italic font-serif lowercase pr-4">limits</span>
           </h1>
           
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-            {dict.hero.description}
+            Design powerful AI workflows in minutes. SkylineAI combines the flexibility of code with the speed of low-code.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <button className="w-full sm:w-auto px-10 py-5 bg-primary text-white font-black rounded-2xl hover:bg-[#d43d63] transition-all shadow-2xl shadow-primary/20 hover:scale-105 active:scale-95">
-              {dict.hero.cta_primary}
+              Get started for free
             </button>
             <button className="w-full sm:w-auto px-10 py-5 bg-zinc-900 text-white font-black rounded-2xl border border-zinc-800 hover:bg-zinc-800 transition-all">
-              {dict.hero.cta_secondary}
+              Book a demo
             </button>
           </div>
 
           <div className="mt-24 pt-16 border-t border-zinc-800">
-            <p className="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em] mb-10">{dict.hero.trusted_by}</p>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em] mb-10">Powering workflows at</p>
             <div 
               className="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale contrast-125"
               aria-label="Companies using SkylineAI"

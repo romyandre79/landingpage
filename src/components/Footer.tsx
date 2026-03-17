@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
-export default function Footer({ dict }: { dict: any }) {
+export default function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
-  const { lang } = useParams();
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
@@ -17,7 +15,7 @@ export default function Footer({ dict }: { dict: any }) {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-1">
-            <Link href={`/${lang}`} className="flex items-center space-x-2 mb-8 group">
+            <Link href="/" className="flex items-center space-x-2 mb-8 group">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">n</span>
               </div>
@@ -26,24 +24,24 @@ export default function Footer({ dict }: { dict: any }) {
               </span>
             </Link>
             <p className="text-zinc-500 text-[15px] font-medium leading-relaxed">
-              {dict.footer.description}
+              Design powerful AI workflows. SkylineAI is the fair-code automation platform for modern engineers.
             </p>
           </div>
           
           <nav>
-            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.platform}</h5>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">Platform</h5>
             <ul className="space-y-5 text-[15px] font-medium text-zinc-500">
-              <li><Link href="#features" className="hover:text-primary transition-colors">{dict.navbar.platform}</Link></li>
-              <li><Link href="#pricing" className="hover:text-primary transition-colors">{dict.navbar.pricing}</Link></li>
+              <li><Link href="#features" className="hover:text-primary transition-colors">Platform</Link></li>
+              <li><Link href="#pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Integrations</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Templates</Link></li>
             </ul>
           </nav>
           
           <nav>
-            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.developer}</h5>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">Developer</h5>
             <ul className="space-y-5 text-[15px] font-medium text-zinc-500">
-              <li><Link href="#" className="hover:text-primary transition-colors">{dict.navbar.docs}</Link></li>
+              <li><Link href="#" className="hover:text-primary transition-colors">Docs</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Self-hosting</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Node Creator</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">GitHub</Link></li>
@@ -51,7 +49,7 @@ export default function Footer({ dict }: { dict: any }) {
           </nav>
           
           <div role="contentinfo" aria-label="Social media links">
-            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">{dict.footer.connect}</h5>
+            <h5 className="font-bold text-white mb-8 text-sm uppercase tracking-widest">Connect</h5>
             <div className="flex space-x-5">
               <Link href="#" className="text-zinc-400 hover:text-primary transition-colors">
                 <span className="sr-only">Twitter</span>
@@ -67,12 +65,12 @@ export default function Footer({ dict }: { dict: any }) {
         
         <div className="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-zinc-500 text-sm font-medium">
-            &copy; {currentYear || '2026'} SkylineAI. {dict.footer.rights}
+            &copy; {currentYear || '2026'} SkylineAI. All rights reserved.
           </p>
           <div className="flex space-x-10 text-sm font-medium text-zinc-500">
-            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.privacy}</Link>
-            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.terms}</Link>
-            <Link href="#" className="hover:text-primary transition-colors">{dict.footer.cookies}</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

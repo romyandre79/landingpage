@@ -1,21 +1,30 @@
-export default function Pricing({ dict }: { dict: any }) {
+export default function Pricing() {
   const tiers = [
     {
       id: "community",
+      name: "Community",
+      description: "Fair-code and free for personal use.",
       features: ["Unlimited Workflows", "200+ Integrations", "Self-hosted", "Community Support", "API Access"],
       price: "0",
+      button: "Download Now",
       highlight: false,
     },
     {
       id: "desktop",
+      name: "Desktop",
+      description: "Power automation on your local machine.",
       features: ["All Community Features", "No-code UI", "Local File Access", "Desktop Notifications", "Premium Nodes"],
       price: "49",
+      button: "Start Desktop Trial",
       highlight: true,
     },
     {
       id: "cloud",
+      name: "Cloud",
+      description: "Scale your automation in the cloud.",
       features: ["Managed Infrastructure", "24/7 Availability", "Priority Support", "High Concurrency", "White-glove Service"],
       price: "120",
+      button: "Go Cloud",
       highlight: false,
     },
   ];
@@ -24,13 +33,12 @@ export default function Pricing({ dict }: { dict: any }) {
     <section id="pricing" className="py-32 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-primary font-bold uppercase tracking-widest text-xs mb-6">{dict.pricing.tagline}</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-white mb-8">{dict.pricing.title}</h3>
+          <h2 className="text-primary font-bold uppercase tracking-widest text-xs mb-6">Simple Pricing</h2>
+          <h3 className="text-4xl lg:text-5xl font-black text-white mb-8">Pay for what you use</h3>
         </div>
 
         <div className="grid md:grid-cols-3 gap-10">
           {tiers.map((tier, idx) => {
-            const tierDict = (dict.pricing.tiers as any)[tier.id];
             return (
               <div
                 key={idx}
@@ -42,15 +50,15 @@ export default function Pricing({ dict }: { dict: any }) {
               >
                 {tier.highlight && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em]">
-                    {dict.pricing.recommended}
+                    Recommended
                   </div>
                 )}
                 <div className="mb-10">
-                  <h3 className="text-2xl font-black text-white mb-3">{tierDict.name}</h3>
-                  <p className="text-zinc-400 text-[15px] font-medium leading-relaxed mb-8">{tierDict.description}</p>
+                  <h3 className="text-2xl font-black text-white mb-3">{tier.name}</h3>
+                  <p className="text-zinc-400 text-[15px] font-medium leading-relaxed mb-8">{tier.description}</p>
                   <div className="flex items-baseline space-x-1">
                     <span className="text-5xl font-black text-white tracking-tight">${tier.price}</span>
-                    <span className="text-zinc-500 font-bold">{dict.pricing.per_month}</span>
+                    <span className="text-zinc-500 font-bold">/mo</span>
                   </div>
                 </div>
 
@@ -74,7 +82,7 @@ export default function Pricing({ dict }: { dict: any }) {
                       : "bg-white text-black hover:bg-zinc-100"
                   }`}
                 >
-                  {tierDict.button}
+                  {tier.button}
                 </button>
               </div>
             );

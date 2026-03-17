@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useParams, usePathname } from "next/navigation";
 
-export default function Navbar({ dict }: { dict: any }) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { lang } = useParams();
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +13,6 @@ export default function Navbar({ dict }: { dict: any }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleLang = () => {
-    const newLang = lang === 'en' ? 'id' : 'en';
-    const newPathname = pathname.replace(`/${lang}`, `/${newLang}`);
-    window.location.href = newPathname;
-  };
 
   return (
     <nav
@@ -32,7 +23,7 @@ export default function Navbar({ dict }: { dict: any }) {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href={`/${lang}`} className="flex items-center space-x-2 group">
+        <Link href="/" className="flex items-center space-x-2 group">
           <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
             <span className="text-white font-bold text-lg">n</span>
           </div>
@@ -44,29 +35,23 @@ export default function Navbar({ dict }: { dict: any }) {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-10">
           <Link href="#features" className="text-[15px] font-medium text-zinc-400 hover:text-primary transition-colors">
-            {dict.navbar.platform}
+            Platform
           </Link>
           <Link href="#pricing" className="text-[15px] font-medium text-zinc-400 hover:text-primary transition-colors">
-            {dict.navbar.pricing}
+            Pricing
           </Link>
           <Link href="#about" className="text-[15px] font-medium text-zinc-400 hover:text-primary transition-colors">
-            {dict.navbar.docs}
+            Docs
           </Link>
           <div className="flex items-center space-x-4 ml-6">
-            <button 
-              onClick={toggleLang}
-              className="px-3 py-1 rounded-md border border-zinc-800 text-xs font-bold text-zinc-400 hover:border-primary hover:text-primary transition-all uppercase"
-            >
-              {lang}
-            </button>
             <Link href="#login" className="text-[15px] font-semibold text-white hover:text-primary transition-colors">
-              {dict.navbar.login}
+              Log in
             </Link>
             <Link
               href="#get-started"
               className="px-6 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-zinc-100 transition-all shadow-md hover:shadow-lg"
             >
-              {dict.navbar.signup}
+              Sign up free
             </Link>
           </div>
         </div>

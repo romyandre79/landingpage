@@ -1,4 +1,4 @@
-export default function Features({ dict }: { dict: any }) {
+export default function Features() {
   const icons = [
     (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,12 +21,25 @@ export default function Features({ dict }: { dict: any }) {
     <section id="features" className="py-32 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-primary font-bold tracking-widest uppercase text-xs mb-6">{dict.features.tagline}</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-white mb-8">{dict.features.title}</h3>
+          <h2 className="text-primary font-bold tracking-widest uppercase text-xs mb-6">Unmatched Flexibility</h2>
+          <h3 className="text-4xl lg:text-5xl font-black text-white mb-8">The open platform for AI-powered automation</h3>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12">
-          {dict.features.items.map((feature: any, idx: number) => (
+          {[
+            {
+              "title": "Self-host or Cloud",
+              "description": "Keep your data on-premises or scale instantly on our managed infrastructure."
+            },
+            {
+              "title": "Build Node-by-Node",
+              "description": "Visual workflow designer that makes complex logic simple to implement."
+            },
+            {
+              "title": "Extensible with Code",
+              "description": "Write custom JavaScript or Python scripts directly within your workflows."
+            }
+          ].map((feature, idx) => (
             <div 
               key={idx} 
               className="p-10 bg-zinc-900/50 backdrop-blur-sm rounded-[32px] border border-zinc-800/80 hover:border-primary/20 transition-all hover:shadow-[0_20px_50px_rgba(234,75,113,0.08)] group"
