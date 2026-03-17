@@ -41,7 +41,7 @@ export default function Features() {
           {features.map((feature, idx) => (
             <div 
               key={idx} 
-              className="p-10 bg-white rounded-[32px] border border-zinc-100 hover:border-primary/20 transition-all hover:shadow-[0_20px_50px_rgba(234,75,113,0.08)] group dark:bg-zinc-900 dark:border-zinc-800"
+              className="p-10 bg-white/50 backdrop-blur-sm rounded-[32px] border border-zinc-100/80 hover:border-primary/20 transition-all hover:shadow-[0_20px_50px_rgba(234,75,113,0.08)] group dark:bg-zinc-900/50 dark:border-zinc-800/80"
             >
               <div className="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all dark:bg-zinc-800">
                 {feature.icon}

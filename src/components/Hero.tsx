@@ -5,9 +5,13 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white dark:bg-brand-black">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05]" 
-           style={{ backgroundImage: 'radial-gradient(#101330 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
+      {/* Background Polish */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] dark:opacity-[0.05]" 
+             style={{ backgroundImage: 'radial-gradient(#101330 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-500/10 rounded-full blur-[100px]" />
+      </div>
       
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
